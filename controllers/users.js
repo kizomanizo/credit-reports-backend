@@ -87,8 +87,8 @@ exports.login = async function(req, res) {
         res.status(401).send({
             success: false,
             message: err.message,
-            password: user.password,
-            username: user.username,
+            // password: user.password,
+            // username: user.username,
         })
     }
 }
@@ -157,5 +157,20 @@ exports.me = async function (req, res) {
         })
     } catch (err) {
         console.log(err)
+    }
+}
+
+// Logout the user form the system
+exports.logout = function(_req, res) {
+    try {
+        res.status(200).json({
+            success: true,
+            message: "User has logged out!"
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        })
     }
 }

@@ -15,5 +15,6 @@ router.get('/:userId', middlewareToken.checkToken, middlewareUser.getUser, userC
 router.patch('/:userId', middlewareToken.checkToken, middlewareUser.getUser, userController.update);
 router.delete('/:userId', middlewareToken.checkToken, middlewareUser.getUser, userController.delete);
 router.get('/me/details', middlewareToken.checkToken, userController.me);
+router.post('/signout', userController.logout);
 
 module.exports = router;
