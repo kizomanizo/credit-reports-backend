@@ -74,7 +74,6 @@ exports.login = async function(req, res) {
                 message: 'Authentication successful!',
                 token: token,
                 expiry: tokenExpiry,
-                // user: user,
             });
         }
         else {
@@ -87,8 +86,6 @@ exports.login = async function(req, res) {
         res.status(401).send({
             success: false,
             message: err.message,
-            // password: user.password,
-            // username: user.username,
         })
     }
 }
